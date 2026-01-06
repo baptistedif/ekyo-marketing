@@ -547,6 +547,7 @@ export default function PlateformePage() {
             </Link>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Sticky CTA Mobile */}
