@@ -12,7 +12,6 @@ export default function PilotageGouvernanceESGPage() {
   return (
     <>
       <section className="relative py-32 bg-gradient-to-br from-[#fcfcfd] via-white to-[#3F2F8D]/5 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#3F2F8D]/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -36,7 +35,7 @@ export default function PilotageGouvernanceESGPage() {
 
       {/* Visualisation principale */}
       <section className="py-32 bg-gradient-to-br from-[#fcfcfd] to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
+        <div className="absolute inset-0 bg-pattern-dots"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -82,7 +81,6 @@ export default function PilotageGouvernanceESGPage() {
 
       {/* Section 1: Matérialité et priorisation des enjeux */}
       <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -136,7 +134,6 @@ export default function PilotageGouvernanceESGPage() {
 
       {/* Section 2: Objectifs & KPIs ESG / climat */}
       <section className="py-32 bg-gradient-to-br from-[#fcfcfd] to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
@@ -190,7 +187,6 @@ export default function PilotageGouvernanceESGPage() {
 
       {/* Section 3: Plans d'actions avec ownership et suivi */}
       <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -244,7 +240,6 @@ export default function PilotageGouvernanceESGPage() {
 
       {/* Section 4: Tableaux de bord par rôle */}
       <section className="py-32 bg-gradient-to-br from-[#fcfcfd] to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
@@ -298,7 +293,6 @@ export default function PilotageGouvernanceESGPage() {
 
       {/* Section 5: Suivi des risques et opportunités */}
       <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

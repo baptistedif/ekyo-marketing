@@ -18,9 +18,486 @@ import {
   Layers,
 } from "lucide-react";
 
+// Fonction pour générer les visualisations orientées DÉCISION selon le point clé
+function renderSoftwarePreview(useCaseIndex: number, bulletIndex: number, accentColor: string) {
+  // CSRD & Reporting durable
+  if (useCaseIndex === 1) {
+    if (bulletIndex === 0) {
+      // Suivi des exigences CSRD / ESRS - DÉCISION : Prioriser les actions
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <Target className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Prioriser les actions</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-red-50/50 rounded border-l-3" style={{ borderLeftColor: accentColor }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">ESRS E1 - Changement climatique</span>
+                <span className="text-xs font-semibold text-red-600">Action requise</span>
+              </div>
+              <div className="text-xs text-gray-600">3 points critiques non documentés</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision : Allouer 2 jours équipe</div>
+            </div>
+            <div className="p-2.5 bg-gray-50 rounded border border-gray-200/60">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-semibold text-gray-700">ESRS 1 - Gouvernance</span>
+                <CheckCircle2 className="w-3 h-3 text-[#83F0C8]" />
+              </div>
+              <div className="text-xs text-gray-500">Complété • Prêt pour audit</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Impact décisionnel</span>
+                <span className="font-bold" style={{ color: accentColor }}>12 normes • 3 actions prioritaires</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    if (bulletIndex === 1) {
+      // Traçabilité & preuves - DÉCISION : Sécuriser l'audit
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <Shield className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Sécuriser l'audit</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-green-50/50 rounded border-l-3" style={{ borderLeftColor: "#83F0C8" }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Indicateur E1-1</span>
+                <span className="text-xs font-semibold text-green-600">Audit-ready</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1">5 preuves documentées • Dernière modif : J. Martin (il y a 2h)</div>
+              <div className="text-xs font-medium text-green-700">✓ Décision : Prêt pour validation COMEX</div>
+            </div>
+            <div className="p-2.5 bg-yellow-50/50 rounded border-l-3" style={{ borderLeftColor: accentColor }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Indicateur E1-3</span>
+                <span className="text-xs font-semibold" style={{ color: accentColor }}>À compléter</span>
+              </div>
+              <div className="text-xs text-gray-600">2 preuves manquantes</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision : Relancer équipe métier</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Niveau de confiance audit</span>
+                <span className="font-bold text-green-600">87% • 3 actions restantes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    if (bulletIndex === 2) {
+      // Versioning - DÉCISION : Valider et publier
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <Layers className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Valider et publier</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-gradient-to-br rounded border-2 shadow-sm" style={{ 
+              background: `linear-gradient(135deg, ${accentColor}10, ${accentColor}05)`,
+              borderColor: `${accentColor}40`
+            }}>
+              <div className="flex items-center justify-between mb-1">
+                <div>
+                  <div className="text-xs font-bold text-gray-800">v2.1 - Version actuelle</div>
+                  <div className="text-xs text-gray-500">Modifiée aujourd'hui • +12 points de données</div>
+                </div>
+                <div className="text-xs px-2 py-1 rounded font-semibold text-white" style={{ backgroundColor: accentColor }}>
+                  À valider
+                </div>
+              </div>
+              <div className="mt-2 pt-2 border-t border-gray-200/60">
+                <div className="text-xs font-medium text-gray-700 mb-1">Comparaison v2.0 → v2.1</div>
+                <div className="flex items-center gap-3 text-xs">
+                  <span className="text-green-600 font-semibold">+12 indicateurs</span>
+                  <span className="text-gray-400">•</span>
+                  <span className="text-gray-600">3 corrections</span>
+                </div>
+              </div>
+              <div className="mt-2 text-xs font-semibold" style={{ color: accentColor }}>→ Décision : Validation COMEX requise</div>
+            </div>
+            <div className="p-2 bg-gray-50 rounded border border-gray-200/60">
+              <div className="text-xs font-semibold text-gray-600">v2.0 - Publiée le 15/01</div>
+              <div className="text-xs text-gray-500">Version de référence audit</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Statut publication</span>
+                <span className="font-bold" style={{ color: accentColor }}>En attente validation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    if (bulletIndex === 3) {
+      // Consolidation multi-entités - DÉCISION : Harmoniser les écarts
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <Network className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Harmoniser les écarts</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-green-50/50 rounded border-l-3" style={{ borderLeftColor: "#83F0C8" }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Siège + Entité A</span>
+                <span className="text-xs font-semibold text-green-600">Alignées</span>
+              </div>
+              <div className="text-xs text-gray-600">Méthodologie cohérente • Prêt consolidation</div>
+            </div>
+            <div className="p-2.5 bg-yellow-50/50 rounded border-l-3" style={{ borderLeftColor: accentColor }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Entité B</span>
+                <span className="text-xs font-semibold" style={{ color: accentColor }}>Écart détecté</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1">Méthode de calcul différente sur 3 indicateurs</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision : Aligner sur référentiel groupe</div>
+            </div>
+            <div className="p-2 bg-gray-50 rounded border border-gray-200/60">
+              <div className="text-xs font-semibold text-gray-700">Entité C</div>
+              <div className="text-xs text-gray-500">En attente de saisie</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Vision groupe</span>
+                <span className="font-bold" style={{ color: accentColor }}>75% consolidé • 1 action requise</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+  
+  // Pilotage ESG & Performance
+  if (useCaseIndex === 0) {
+    if (bulletIndex === 0) {
+      // Matérialité - DÉCISION : Prioriser les investissements
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <Target className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Prioriser les investissements</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-red-50/50 rounded border-l-3" style={{ borderLeftColor: accentColor }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Émissions carbone</span>
+                <span className="text-xs font-semibold text-red-600">Priorité critique</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1">Impact financier : -15% vs objectif</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision : Allouer budget décarbonation</div>
+            </div>
+            <div className="p-2.5 bg-gray-50 rounded border border-gray-200/60">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-semibold text-gray-700">Diversité</span>
+                <span className="text-xs px-1.5 py-0.5 rounded" style={{ backgroundColor: `${accentColor}10`, color: accentColor }}>
+                  Moyen
+                </span>
+              </div>
+              <div className="text-xs text-gray-500">Sur la trajectoire • Suivi trimestriel</div>
+            </div>
+            <div className="p-2.5 bg-green-50/50 rounded border-l-3" style={{ borderLeftColor: "#83F0C8" }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Gouvernance</span>
+                <span className="text-xs font-semibold text-green-600">Maîtrisé</span>
+              </div>
+              <div className="text-xs text-gray-600">90% des objectifs atteints</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Impact décisionnel</span>
+                <span className="font-bold" style={{ color: accentColor }}>1 décision stratégique requise</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    if (bulletIndex === 1) {
+      // KPIs - DÉCISION : Agir sur les écarts
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <BarChart3 className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Agir sur les écarts</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-red-50/50 rounded border-l-3" style={{ borderLeftColor: accentColor }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Émissions CO₂</span>
+                <span className="text-xs font-semibold text-red-600">-15% vs objectif</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1">Objectif : -20% • Réalisé : -5%</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision : Renforcer plan d'actions</div>
+            </div>
+            <div className="p-2.5 bg-green-50/50 rounded border-l-3" style={{ borderLeftColor: "#83F0C8" }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Taux diversité</span>
+                <span className="text-xs font-semibold text-green-600">+2% vs objectif</span>
+              </div>
+              <div className="text-xs text-gray-600">42% • Objectif 40% atteint</div>
+            </div>
+            <div className="p-2 bg-gray-50 rounded border border-gray-200/60">
+              <div className="text-xs font-semibold text-gray-700">Formation</div>
+              <div className="text-xs text-gray-500">89% • Sur la trajectoire</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Actions requises</span>
+                <span className="font-bold" style={{ color: accentColor }}>1 décision prioritaire</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    if (bulletIndex === 2) {
+      // Plans d'actions - DÉCISION : Réallouer les ressources
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <CheckSquare className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Réallouer les ressources</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-yellow-50/50 rounded border-l-3" style={{ borderLeftColor: accentColor }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">3 actions en retard</span>
+                <span className="text-xs font-semibold" style={{ color: accentColor }}>Action requise</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1">Décarbonation • Échéance dépassée</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision : Réassigner à équipe dédiée</div>
+            </div>
+            <div className="p-2.5 bg-green-50/50 rounded border-l-3" style={{ borderLeftColor: "#83F0C8" }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">12 actions validées</span>
+                <span className="text-xs font-semibold text-green-600">Sur la trajectoire</span>
+              </div>
+              <div className="text-xs text-gray-600">8 actions en cours • 3 en attente</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Impact décisionnel</span>
+                <span className="font-bold" style={{ color: accentColor }}>3 réallocations nécessaires</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    if (bulletIndex === 3) {
+      // Tableaux de bord - DÉCISION : Valider la stratégie
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <BarChart3 className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Valider la stratégie</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-gradient-to-br rounded border-2 shadow-sm" style={{ 
+              background: `linear-gradient(135deg, ${accentColor}10, ${accentColor}05)`,
+              borderColor: `${accentColor}40`
+            }}>
+              <div className="text-xs font-bold text-gray-800 mb-1">Performance ESG globale</div>
+              <div className="flex items-baseline gap-2 mb-2">
+                <span className="text-lg font-bold" style={{ color: accentColor }}>75%</span>
+                <span className="text-xs text-gray-500">vs objectif 80%</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1.5">3 enjeux critiques identifiés</div>
+              <div className="text-xs font-semibold" style={{ color: accentColor }}>→ Décision COMEX : Renforcer plan d'actions</div>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="p-2 bg-gray-50 rounded border border-gray-200/60">
+                <div className="text-xs text-gray-500 mb-1">Actions</div>
+                <div className="text-sm font-bold" style={{ color: accentColor }}>28</div>
+              </div>
+              <div className="p-2 bg-gray-50 rounded border border-gray-200/60">
+                <div className="text-xs text-gray-500 mb-1">Enjeux</div>
+                <div className="text-sm font-bold" style={{ color: "#83F0C8" }}>12</div>
+              </div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Prochaine décision</span>
+                <span className="font-bold" style={{ color: accentColor }}>COMEX du 15/02</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+  
+  // Climat & Empreinte carbone
+  if (useCaseIndex === 3) {
+    if (bulletIndex === 0) {
+      // Scopes - DÉCISION : Cibler les réductions
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <TrendingDown className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Cibler les réductions</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-red-50/50 rounded border-l-3" style={{ borderLeftColor: accentColor }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Scope 2 : 8.2K tCO₂e</span>
+                <span className="text-xs font-semibold text-red-600">50% du total</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1">Principal levier de réduction</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision : Prioriser énergies renouvelables</div>
+            </div>
+            <div className="p-2 bg-gray-50 rounded border border-gray-200/60">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-semibold text-gray-700">Scope 1 : 2.5K tCO₂e</span>
+                <span className="text-xs text-gray-500">15%</span>
+              </div>
+            </div>
+            <div className="p-2 bg-gray-50 rounded border border-gray-200/60">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-semibold text-gray-700">Scope 3 : 6.8K tCO₂e</span>
+                <span className="text-xs text-gray-500">35%</span>
+              </div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Impact décisionnel</span>
+                <span className="font-bold" style={{ color: accentColor }}>1 décision stratégique</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    if (bulletIndex === 1) {
+      // Connexion FEC / factures - DÉCISION : Automatiser la collecte
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <Database className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Automatiser la collecte</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-green-50/50 rounded border-l-3" style={{ borderLeftColor: "#83F0C8" }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">FEC automatisé</span>
+                <span className="text-xs font-semibold text-green-600">Actif</span>
+              </div>
+              <div className="text-xs text-gray-600">12.5K données importées • Gain : 2 jours/mois</div>
+            </div>
+            <div className="p-2.5 bg-yellow-50/50 rounded border-l-3" style={{ borderLeftColor: accentColor }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Lecture factures</span>
+                <span className="text-xs font-semibold" style={{ color: accentColor }}>À optimiser</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1">70% automatisé • 30% manuel</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision : Activer OCR factures</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Gain de temps</span>
+                <span className="font-bold" style={{ color: accentColor }}>2 jours/mois économisés</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    if (bulletIndex === 2) {
+      // Trajectoires - DÉCISION : Valider le scénario
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <Target className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Valider le scénario</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-green-50/50 rounded border-l-3" style={{ borderLeftColor: "#83F0C8" }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Objectif SBTi : -30%</span>
+                <span className="text-xs font-semibold text-green-600">Sur la trajectoire</span>
+              </div>
+              <div className="text-xs text-gray-600">Réalisé : -12% • Objectif 2030 : -30%</div>
+            </div>
+            <div className="p-2.5 bg-gradient-to-br rounded border-2" style={{ 
+              background: `linear-gradient(135deg, ${accentColor}10, ${accentColor}05)`,
+              borderColor: `${accentColor}40`
+            }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Scénario -50%</span>
+                <span className="text-xs font-semibold" style={{ color: accentColor }}>À valider</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1">Impact : 3.5M€ investissement requis</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision COMEX : Valider budget</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Prochaine décision</span>
+                <span className="font-bold" style={{ color: accentColor }}>COMEX du 20/02</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    if (bulletIndex === 3) {
+      // PCF - DÉCISION : Optimiser les produits
+      return (
+        <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+          <div className="bg-gradient-to-r p-2.5 flex items-center gap-1.5" style={{ background: `linear-gradient(90deg, ${accentColor}15, ${accentColor}08)` }}>
+            <Sparkles className="w-3 h-3" style={{ color: accentColor }} />
+            <span className="text-xs font-semibold" style={{ color: accentColor }}>Décision : Optimiser les produits</span>
+          </div>
+          <div className="p-3 space-y-2.5">
+            <div className="p-2.5 bg-yellow-50/50 rounded border-l-3" style={{ borderLeftColor: accentColor }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Produit A : 12.5 kgCO₂e</span>
+                <span className="text-xs font-semibold" style={{ color: accentColor }}>Au-dessus moyenne</span>
+              </div>
+              <div className="text-xs text-gray-600 mb-1">+25% vs référence marché</div>
+              <div className="mt-1.5 text-xs font-medium" style={{ color: accentColor }}>→ Décision : Réviser fournisseurs</div>
+            </div>
+            <div className="p-2.5 bg-green-50/50 rounded border-l-3" style={{ borderLeftColor: "#83F0C8" }}>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-bold text-gray-800">Produit B : 8.2 kgCO₂e</span>
+                <span className="text-xs font-semibold text-green-600">Conforme</span>
+              </div>
+              <div className="text-xs text-gray-600">-15% vs référence marché</div>
+            </div>
+            <div className="pt-2 border-t border-gray-200/60">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-600">Actions requises</span>
+                <span className="font-bold" style={{ color: accentColor }}>1 décision produit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+  
+  
+  // Fallback par défaut
+  return (
+    <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-3">
+      <div className="text-xs text-gray-500 text-center">Aperçu du logiciel</div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [activeStep, setActiveStep] = useState(0);
   const [activeUseCase, setActiveUseCase] = useState(0);
+  const [activeBullet, setActiveBullet] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Scroll progress indicator
@@ -48,16 +525,16 @@ export default function HomePage() {
         />
       </div>
 
-      {/* Hero Section - Optimisé */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#fcfcfd] via-white to-[#beb2ff]/5">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
-        {/* Réduire les effets blur pour performance */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#beb2ff]/15 rounded-full blur-3xl will-change-transform"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#83F0C8]/15 rounded-full blur-3xl will-change-transform"></div>
+      {/* Hero Section - Renforcé avec profondeur */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#fcfcfd] via-white to-[#beb2ff]/12">
+        {/* Effets blur renforcés */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#beb2ff]/25 rounded-full blur-3xl will-change-transform animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#83F0C8]/25 rounded-full blur-3xl will-change-transform animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6F5DE9]/10 rounded-full blur-3xl will-change-transform"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#344054] mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#344054] mb-6 leading-tight drop-shadow-sm">
               Le pilotage extra-financier
               <br />
               <span className="bg-gradient-to-r from-[#3F2F8D] via-[#6F5DE9] to-[#beb2ff] bg-clip-text text-transparent">
@@ -70,7 +547,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <Link
                 href="/contact?intent=demo"
-                className="group bg-[#3F2F8D] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#4c30d6] transition-all inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#3F2F8D]/20"
+                className="group bg-[#3F2F8D] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#4c30d6] transition-all inline-flex items-center justify-center shadow-violet shadow-violet-hover transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#3F2F8D]/20"
                 aria-label="Demander une démonstration d'Ekyo"
               >
                 Voir Ekyo en démo
@@ -78,7 +555,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/contact?intent=expert"
-                className="bg-white text-[#3F2F8D] border-2 border-[#3F2F8D] px-8 py-4 rounded-lg font-semibold hover:bg-[#3F2F8D]/5 transition-all inline-flex items-center justify-center hover:border-[#4c30d6] hover:text-[#4c30d6] hover:shadow-md focus:outline-none focus:ring-4 focus:ring-[#3F2F8D]/20"
+                className="bg-white text-[#3F2F8D] border-2 border-[#3F2F8D] px-8 py-4 rounded-lg font-semibold hover:bg-[#3F2F8D]/10 transition-all inline-flex items-center justify-center hover:border-[#4c30d6] hover:text-[#4c30d6] shadow-md hover:shadow-lg hover:shadow-violet transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#3F2F8D]/20"
                 aria-label="Échanger avec un expert Ekyo"
               >
                 Échanger avec un expert
@@ -115,19 +592,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section - 4 usages (interactif) - Optimisé */}
-      <section className="py-20 md:py-32 section-background bg-gradient-to-br from-[#fcfcfd] via-white to-[#beb2ff]/5 relative">
-        <div className="absolute inset-0 bg-pattern-grid-subtle opacity-30"></div>
-        <div className="absolute top-20 right-20 w-96 h-96 bg-[#beb2ff]/8 rounded-full blur-3xl will-change-transform"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#83F0C8]/8 rounded-full blur-3xl will-change-transform"></div>
+      {/* Section - 4 usages (interactif) - Renforcé */}
+      <section className="py-20 md:py-32 section-background bg-gradient-to-br from-[#fcfcfd] via-white to-[#beb2ff]/15 relative">
+        <div className="absolute inset-0 bg-pattern-dots"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-[#beb2ff]/20 rounded-full blur-3xl will-change-transform"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#83F0C8]/20 rounded-full blur-3xl will-change-transform"></div>
         <div className="relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#344054] mb-4">
                 4 usages clés, une plateforme unique
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                Choisissez votre point d'entrée — Ekyo s'adapte à votre organisation.
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-2">
+                Choisissez votre point d'entrée.
+              </p>
+              <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
+                Ekyo s'adapte à votre organisation et à vos priorités.
               </p>
             </div>
 
@@ -144,7 +624,7 @@ export default function HomePage() {
                   <button
                     key={uc.href}
                     type="button"
-                    onClick={() => setActiveUseCase(idx)}
+                    onClick={() => { setActiveUseCase(idx); setActiveBullet(0); }}
                     onKeyDown={(e) => {
                       const key = e.key;
                       if (key === "ArrowLeft" || key === "ArrowRight" || key === "Home" || key === "End") {
@@ -160,7 +640,7 @@ export default function HomePage() {
                     className={`relative px-4 sm:px-6 py-3 rounded-t-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#3F2F8D]/20 ${
                       isActive
                         ? "bg-white text-[#3F2F8D] border-t-2 border-x-2 border-gray-200 shadow-sm"
-                        : "text-gray-600 hover:text-[#3F2F8D] hover:bg-gray-50"
+                        : "text-gray-500 hover:text-[#3F2F8D] hover:bg-gray-50/80"
                     }`}
                     role="tab"
                     aria-selected={isActive}
@@ -180,11 +660,13 @@ export default function HomePage() {
                           />
                         );
                       })()}
-                      <span className="text-xs sm:text-sm font-semibold whitespace-nowrap">{uc.title}</span>
+                      <span className={`text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors ${
+                        isActive ? "text-[#344054]" : "text-gray-500"
+                      }`}>{uc.title}</span>
                     </div>
                     {isActive && (
                       <div
-                        className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
+                        className="absolute bottom-0 left-0 right-0 h-1 rounded-full"
                         style={{ backgroundColor: uc.accent }}
                         aria-hidden="true"
                       />
@@ -195,109 +677,148 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Panneau de contenu - Optimisé */}
+          {/* Panneau de contenu - Renforcé */}
           <div
-            className="relative bg-gradient-to-br from-white via-[#fcfcfd] to-[#f8f9fa] rounded-2xl p-6 sm:p-8 lg:p-12 border border-gray-200/50 shadow-xl transition-all duration-500 overflow-hidden"
+            className="relative bg-gradient-to-br from-white via-[#fcfcfd] to-[#f8f9fa] rounded-2xl p-6 sm:p-8 lg:p-12 border-2 border-[#beb2ff]/30 shadow-2xl shadow-violet transition-all duration-500 overflow-hidden hover:border-[#6F5DE9]/50 hover:shadow-violet-hover"
             role="tabpanel"
             id={`usecase-panel-${activeUseCase}`}
             aria-labelledby={`usecase-tab-${activeUseCase}`}
           >
-            <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#beb2ff]/3 via-transparent to-[#83F0C8]/3"></div>
+            <div className="absolute inset-0 bg-pattern-dots"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#beb2ff]/12 via-transparent to-[#83F0C8]/12"></div>
             <div className="relative z-10">
               <div className="max-w-5xl mx-auto">
-                {/* Badge et titre */}
-                <div className="mb-6 md:mb-8">
+                {/* Badge et titre - Hiérarchie claire */}
+                <div className="mb-5 md:mb-6">
                 <div
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-4"
+                  className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border mb-3"
                   style={{
-                    borderColor: `${useCases[activeUseCase].accent}30`,
-                    backgroundColor: `${useCases[activeUseCase].accent}10`,
+                    borderColor: `${useCases[activeUseCase].accent}15`,
+                    backgroundColor: `${useCases[activeUseCase].accent}05`,
                   }}
                 >
                   <div
-                    className="w-2 h-2 rounded-full"
+                    className="w-1.5 h-1.5 rounded-full opacity-40"
                     style={{ backgroundColor: useCases[activeUseCase].accent }}
                   />
-                  <span
-                    className="text-xs font-semibold"
-                    style={{ color: useCases[activeUseCase].accent }}
-                  >
+                  <span className="text-xs font-medium text-gray-400">
                     {useCases[activeUseCase].kicker}
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#344054] mb-4 leading-tight">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#344054] mb-3 leading-tight max-w-3xl">
                   {useCases[activeUseCase].headline}
                 </h3>
-                <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl">
                   {useCases[activeUseCase].long}
                 </p>
               </div>
 
-              {/* Grille 2 colonnes - Responsive amélioré */}
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-                <div className="bg-white rounded-xl p-5 sm:p-6 border border-gray-200 hover:border-[#beb2ff] transition-all shadow-sm hover-lift">
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">
+              {/* Grille 2 colonnes - Points clés interactifs, Aperçu dynamique */}
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+                {/* Carte Points clés - Interactive renforcée */}
+                <div className="bg-gradient-to-br from-white to-[#f8f9ff] rounded-xl p-5 sm:p-6 border-2 border-[#3F2F8D]/40 shadow-lg shadow-violet hover:border-[#6F5DE9]/60 hover:shadow-xl hover:shadow-violet-hover transition-all">
+                  <p className="text-xs font-bold text-[#3F2F8D] uppercase tracking-wider mb-4">
                     Points clés
                   </p>
-                  <ul className="space-y-3">
-                    {useCases[activeUseCase].bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 group/item">
-                        <CheckCircle2 className="w-5 h-5 text-[#83F0C8] flex-shrink-0 mt-0.5" aria-hidden="true" />
-                        <span className="text-sm sm:text-base text-gray-700 leading-relaxed">{b}</span>
-                      </li>
-                    ))}
+                  <ul className="space-y-2" role="listbox" aria-label="Points clés">
+                    {useCases[activeUseCase].bullets.map((bullet, idx) => {
+                      const isActive = activeBullet === idx;
+                      return (
+                        <li key={bullet.text}>
+                          <button
+                            type="button"
+                            onClick={() => setActiveBullet(idx)}
+                            onKeyDown={(e) => {
+                              if (e.key === "ArrowDown") {
+                                e.preventDefault();
+                                setActiveBullet((idx + 1) % useCases[activeUseCase].bullets.length);
+                              } else if (e.key === "ArrowUp") {
+                                e.preventDefault();
+                                setActiveBullet((idx - 1 + useCases[activeUseCase].bullets.length) % useCases[activeUseCase].bullets.length);
+                              }
+                            }}
+                            className={`w-full flex items-start gap-3 text-left p-2.5 rounded-lg transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-[#3F2F8D]/30 ${
+                              isActive
+                                ? "bg-[#3F2F8D]/8 border border-[#3F2F8D]/20 shadow-sm"
+                                : "hover:bg-gray-100/80 border border-transparent hover:shadow-sm"
+                            }`}
+                            role="option"
+                            aria-selected={isActive}
+                          >
+                            <CheckCircle2 
+                              className={`w-5 h-5 flex-shrink-0 mt-0.5 transition-colors ${
+                                isActive ? "text-[#3F2F8D]" : "text-[#83F0C8]"
+                              }`} 
+                              aria-hidden="true" 
+                            />
+                            <span className={`text-sm sm:text-base leading-relaxed transition-colors ${
+                              isActive ? "text-[#344054] font-medium" : "text-gray-700"
+                            }`}>
+                              {bullet.text}
+                            </span>
+                          </button>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
 
-                <div className="bg-white rounded-xl p-5 sm:p-6 border border-gray-200 hover:border-[#beb2ff] transition-all shadow-sm hover-lift">
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">
-                    Aperçu (exemple)
+                {/* Carte Aperçu - Visualisation logiciel dynamique */}
+                <div className="bg-gray-50/30 rounded-xl p-4 sm:p-5 border border-gray-200/80 overflow-hidden">
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">
+                    Aperçu
                   </p>
-                  <div className="space-y-3">
-                    {useCases[activeUseCase].chips.map((c) => (
-                      <div
-                        key={c}
-                        className="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 px-3 sm:px-4 py-2.5 sm:py-3 hover:border-[#beb2ff] hover:bg-white transition-all hover:shadow-sm"
-                      >
-                        <span className="text-sm text-gray-700 font-medium">{c}</span>
-                        <div
-                          className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                          style={{ backgroundColor: useCases[activeUseCase].accent }}
-                          aria-hidden="true"
-                        />
-                      </div>
-                    ))}
+                  <div className="relative min-h-[200px]">
+                    {(() => {
+                      const preview = useCases[activeUseCase].bullets[activeBullet]?.preview;
+                      if (!preview) return null;
+                      
+                      // Générer la visualisation selon le point clé
+                      return (
+                        <div 
+                          key={`${activeUseCase}-${activeBullet}`}
+                          className="animate-fade-in-right"
+                        >
+                          {renderSoftwarePreview(activeUseCase, activeBullet, useCases[activeUseCase].accent)}
+                        </div>
+                      );
+                    })()}
                   </div>
                 </div>
               </div>
 
-              {/* CTAs - Hiérarchie améliorée */}
-              <div className="flex flex-col sm:flex-row gap-4 items-center justify-between pt-6 border-t border-gray-200">
+              {/* Rupture visuelle avant CTAs */}
+              <div className="my-6 border-t border-gray-200/60"></div>
+
+              {/* CTAs - Hiérarchie stricte : Principal → Secondaire → Tertiaire */}
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-                  <Link
-                    href={useCases[activeUseCase].href}
-                    className="bg-[#3F2F8D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#4c30d6] transition-all inline-flex items-center justify-center shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-[#3F2F8D]/20 text-center"
-                    aria-label={`Découvrir la solution ${useCases[activeUseCase].title}`}
-                  >
-                    Découvrir la solution
-                    <ArrowRight className="ml-2" size={18} aria-hidden="true" />
-                  </Link>
+                  {/* CTA Principal - Plein, contrasté */}
                   <Link
                     href="/contact?intent=demo"
-                    className="bg-white text-[#3F2F8D] border-2 border-[#3F2F8D] px-6 py-3 rounded-lg font-semibold hover:bg-[#3F2F8D]/5 transition-all inline-flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-[#3F2F8D]/20 text-center"
+                    className="bg-[#3F2F8D] text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-[#4c30d6] transition-all inline-flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#3F2F8D]/20 text-center"
                     aria-label="Voir Ekyo en démonstration"
                   >
                     Voir Ekyo en démo
+                    <ArrowRight className="ml-2" size={18} aria-hidden="true" />
+                  </Link>
+                  {/* CTA Secondaire - Outline */}
+                  <Link
+                    href={useCases[activeUseCase].href}
+                    className="bg-white text-[#3F2F8D] border border-[#3F2F8D]/40 px-6 py-3.5 rounded-lg font-medium hover:bg-[#3F2F8D]/5 hover:border-[#3F2F8D]/60 transition-all inline-flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-[#3F2F8D]/20 text-center"
+                    aria-label={`Découvrir la solution ${useCases[activeUseCase].title}`}
+                  >
+                    Découvrir la solution
                   </Link>
                 </div>
+                {/* CTA Tertiaire - Lien discret */}
                 <Link
                   href="/plateforme"
-                  className="text-sm font-semibold text-[#3F2F8D] hover:text-[#4c30d6] transition-colors inline-flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#3F2F8D]/20 rounded px-2 py-1"
+                  className="text-sm text-gray-500 hover:text-[#3F2F8D] transition-colors inline-flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-[#3F2F8D]/20 rounded px-2 py-1"
                   aria-label="Vue d'ensemble de la plateforme"
                 >
                   Vue d'ensemble produit
-                  <ArrowRight size={14} aria-hidden="true" />
+                  <ArrowRight size={12} aria-hidden="true" />
                 </Link>
               </div>
               </div>
@@ -307,9 +828,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Micro-section - Audit-ready - Optimisé */}
-      <section className="py-20 md:py-32 section-background bg-gradient-to-br from-[#3F2F8D]/5 via-white to-[#83F0C8]/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-grid-subtle opacity-20"></div>
+      {/* Micro-section - Audit-ready - Renforcé */}
+      <section className="py-20 md:py-32 section-background bg-gradient-to-br from-[#3F2F8D]/12 via-white to-[#83F0C8]/12 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-gradient"></div>
         <div className="relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -324,9 +844,9 @@ export default function HomePage() {
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* Audit-trail */}
-              <div className="bg-white rounded-2xl p-5 sm:p-6 border-2 border-gray-200 hover:border-[#3F2F8D]/50 transition-all shadow-lg hover:shadow-xl hover-lift">
+              <div className="bg-white rounded-2xl p-5 sm:p-6 border-2 border-[#3F2F8D]/30 hover:border-[#3F2F8D]/60 transition-all shadow-lg shadow-violet hover:shadow-xl hover:shadow-violet-hover hover-lift">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#3F2F8D18" }}>
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md" style={{ backgroundColor: "#3F2F8D25" }}>
                     <Shield className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: "#3F2F8D" }} aria-hidden="true" />
                   </div>
                   <div>
@@ -361,9 +881,9 @@ export default function HomePage() {
               </div>
 
               {/* Versioning */}
-              <div className="bg-white rounded-2xl p-5 sm:p-6 border-2 border-gray-200 hover:border-[#6F5DE9]/50 transition-all shadow-lg hover:shadow-xl hover-lift">
+              <div className="bg-white rounded-2xl p-5 sm:p-6 border-2 border-[#6F5DE9]/30 hover:border-[#6F5DE9]/60 transition-all shadow-lg shadow-violet hover:shadow-xl hover:shadow-violet-hover hover-lift">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#6F5DE918" }}>
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md" style={{ backgroundColor: "#6F5DE925" }}>
                     <Layers className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: "#6F5DE9" }} aria-hidden="true" />
                   </div>
                   <div>
@@ -399,9 +919,9 @@ export default function HomePage() {
               </div>
 
               {/* Consolidation groupe */}
-              <div className="bg-white rounded-2xl p-5 sm:p-6 border-2 border-gray-200 hover:border-[#83F0C8]/50 transition-all shadow-lg hover:shadow-xl hover-lift sm:col-span-2 lg:col-span-1">
+              <div className="bg-white rounded-2xl p-5 sm:p-6 border-2 border-[#83F0C8]/30 hover:border-[#83F0C8]/60 transition-all shadow-lg shadow-green hover:shadow-xl hover:shadow-green-hover hover-lift sm:col-span-2 lg:col-span-1">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#83F0C818" }}>
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md" style={{ backgroundColor: "#83F0C825" }}>
                     <Network className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: "#83F0C8" }} aria-hidden="true" />
                   </div>
                   <div>
@@ -436,7 +956,7 @@ export default function HomePage() {
 
       {/* Section - Comment ça marche - Optimisé */}
       <section className="py-20 md:py-32 section-background bg-gradient-to-br from-white via-[#fcfcfd] to-[#83F0C8]/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
+        <div className="absolute inset-0 bg-pattern-dots"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#83F0C8]/20 to-transparent"></div>
         <div className="relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -834,10 +1354,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section - Ce qui différencie Ekyo - Optimisé */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-[#beb2ff]/5 via-white to-[#83F0C8]/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#beb2ff]/20 to-transparent"></div>
+      {/* Section - Ce qui différencie Ekyo - Renforcé */}
+      <section className="py-20 md:py-32 bg-gradient-to-br from-[#beb2ff]/15 via-white to-[#83F0C8]/15 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#beb2ff]/40 to-transparent"></div>
         <div className="relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 md:mb-16">
@@ -916,12 +1435,12 @@ export default function HomePage() {
               ];
               
               return (
-                <div key={index} className="relative card-elevated card-gradient rounded-2xl p-8 border border-gray-100 hover:border-[#beb2ff]/50 transition-all group overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#beb2ff]/5 via-transparent to-[#83F0C8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div key={index} className="relative card-elevated card-gradient rounded-2xl p-8 border-2 border-[#beb2ff]/30 hover:border-[#beb2ff]/60 transition-all group overflow-hidden shadow-violet hover:shadow-violet-hover" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#beb2ff]/12 via-transparent to-[#83F0C8]/12 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <div className="relative z-10">
                     <div className="flex items-start gap-6 mb-4">
-                      <div className="icon-container w-16 h-16 rounded-2xl bg-gradient-to-br from-[#83F0C8]/20 to-[#83F0C8]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg group-hover:shadow-xl border border-[#83F0C8]/20">
+                      <div className="icon-container w-16 h-16 rounded-2xl bg-gradient-to-br from-[#83F0C8]/30 to-[#83F0C8]/15 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg shadow-green group-hover:shadow-xl group-hover:shadow-green-hover border-2 border-[#83F0C8]/30">
                         <CheckCircle2 className="w-8 h-8 text-[#83F0C8]" />
                       </div>
                       <div className="flex-1">
@@ -932,7 +1451,7 @@ export default function HomePage() {
                     {visualizations[index]}
                   </div>
                   
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#beb2ff]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#beb2ff]/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
               );
             })}
@@ -946,10 +1465,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section Métriques / Preuves sociales - Optimisé */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-[#3F2F8D]/5 via-white to-[#beb2ff]/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-grid-subtle opacity-15"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3F2F8D]/15 to-transparent"></div>
+      {/* Section Métriques / Preuves sociales - Renforcé */}
+      <section className="py-20 md:py-32 bg-gradient-to-br from-[#3F2F8D]/12 via-white to-[#beb2ff]/12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-dots"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3F2F8D]/30 to-transparent"></div>
         <div className="relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 md:mb-16">
@@ -985,7 +1504,7 @@ export default function HomePage() {
 
       {/* CTA Final - Optimisé */}
       <section className="py-20 md:py-32 pb-28 md:pb-32 section-background bg-gradient-to-br from-[#beb2ff]/10 via-white to-[#83F0C8]/10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
+        {/* Pas de pattern pour alterner avec la section précédente */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#beb2ff]/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#83F0C8]/20 to-transparent"></div>
         <div className="relative z-10">
@@ -1055,18 +1574,133 @@ const differentiators = [
 
 const useCases = [
   {
-    title: "CSRD & Reporting durable",
-    kicker: "Reporting & conformité",
-    headline: "Préparez, structurez et sécurisez votre reporting extra-financier",
-    short: "CSRD / ESRS / Taxonomie, avec traçabilité et auditabilité complètes.",
-    long: "Structurez le reporting de durabilité à l'échelle du groupe, consolidez les données ESG & climat, et préparez l'audit avec un niveau d'exigence compatible investisseurs.",
+    title: "Pilotage ESG & Performance",
+    kicker: "Pilotage & gouvernance",
+    headline: "Transformez l'ESG en levier de pilotage et de performance",
+    short: "Enjeux, KPIs, plans d'actions, gouvernance et visibilité COMEX.",
+    long: "Priorisez vos enjeux, définissez vos objectifs, suivez vos indicateurs et pilotez les plans d'actions — avec une gouvernance claire et des tableaux de bord direction.",
     bullets: [
-      "Suivi des exigences CSRD / ESRS",
-      "Traçabilité & preuves (audit-trail)",
-      "Versioning & préparation audit",
-      "Consolidation multi-entités",
+      {
+        text: "Matérialité & priorisation des enjeux",
+        preview: {
+          title: "Matérialité & priorisation",
+          description: "Identifiez et hiérarchisez vos enjeux ESG selon leur impact financier et extra-financier.",
+          items: ["Analyse de double matérialité", "Priorisation par parties prenantes", "Cartographie des enjeux"],
+        },
+      },
+      {
+        text: "KPIs ESG & climat",
+        preview: {
+          title: "KPIs ESG & climat",
+          description: "Suivez vos indicateurs clés avec des objectifs mesurables et comparables.",
+          items: ["Bibliothèque d'indicateurs", "Objectifs et cibles", "Suivi temporel"],
+        },
+      },
+      {
+        text: "Plans d'actions (ownership & échéances)",
+        preview: {
+          title: "Plans d'actions",
+          description: "Pilotez vos initiatives avec des responsables identifiés et des échéances claires.",
+          items: ["Attribution des responsabilités", "Jalons et deadlines", "Suivi d'avancement"],
+        },
+      },
+      {
+        text: "Tableaux de bord direction",
+        preview: {
+          title: "Tableaux de bord direction",
+          description: "Donnez à votre COMEX une visibilité synthétique sur la performance ESG.",
+          items: ["Vue consolidée groupe", "Alertes et tendances", "Export COMEX"],
+        },
+      },
     ],
-    chips: ["ESRS — points de données", "Audit-trail", "Versioning", "Export structuré"],
+    href: "/solutions/pilotage-esg-performance",
+    accent: "#3F2F8D",
+    icon: Target,
+  },
+  {
+    title: "Gouvernance & pilotage stratégique",
+    kicker: "Gouvernance stratégique",
+    headline: "Structurez votre gouvernance ESG et pilotez la stratégie à tous les niveaux",
+    short: "Référentiel commun, consolidation automatique, gouvernance locale et vision groupe.",
+    long: "Harmonisez vos pratiques ESG à l'échelle du groupe, consolidez automatiquement les données et pilotez une gouvernance claire — du local au niveau stratégique.",
+    bullets: [
+      {
+        text: "Référentiel commun groupe",
+        preview: {
+          title: "Référentiel groupe",
+          description: "Un cadre commun pour harmoniser les pratiques ESG de toutes vos entités.",
+          items: ["Indicateurs standardisés", "Méthodologies partagées", "Nomenclatures communes"],
+        },
+      },
+      {
+        text: "Collecte locale → consolidation automatique",
+        preview: {
+          title: "Collecte & consolidation",
+          description: "Les entités saisissent localement, la consolidation se fait automatiquement.",
+          items: ["Saisie décentralisée", "Agrégation automatique", "Contrôles de cohérence"],
+        },
+      },
+      {
+        text: "Rôles & droits avancés",
+        preview: {
+          title: "Rôles & droits",
+          description: "Gérez finement qui peut voir et modifier quoi dans la plateforme.",
+          items: ["Profils utilisateurs", "Droits par entité", "Validation hiérarchique"],
+        },
+      },
+      {
+        text: "Vision par entité / BU / périmètre",
+        preview: {
+          title: "Vision multi-périmètres",
+          description: "Analysez vos données à tous les niveaux de votre organisation.",
+          items: ["Vue par entité", "Agrégation par BU", "Filtres dynamiques"],
+        },
+      },
+    ],
+    href: "/solutions/groupes-organisations-multi-entites",
+    accent: "#6F5DE9",
+    icon: Shield,
+  },
+  {
+    title: "CSRD & Reporting durable",
+    kicker: "Reporting structuré & pilotage",
+    headline: "Préparez, structurez et sécurisez votre reporting extra-financier pour en faire un véritable outil de pilotage.",
+    short: "CSRD / ESRS / Taxonomie, avec traçabilité et auditabilité complètes.",
+    long: "Structurez le reporting de durabilité à l'échelle du groupe, consolidez les données ESG et climat, et préparez l'audit avec un niveau d'exigence compatible investisseurs, sans transformer votre organisation en usine à reporting.",
+    bullets: [
+      {
+        text: "Suivi des exigences CSRD / ESRS sans dispersion des équipes",
+        preview: {
+          title: "Suivi CSRD / ESRS",
+          description: "Centralisez le suivi des exigences réglementaires sans multiplier les outils.",
+          items: ["Bibliothèque ESRS complète", "Points de données structurés", "Suivi par norme"],
+        },
+      },
+      {
+        text: "Traçabilité & preuves (audit-trail) pour un audit maîtrisé",
+        preview: {
+          title: "Traçabilité & audit-trail",
+          description: "Chaque donnée est documentée avec son origine et son historique de modifications.",
+          items: ["Journal des preuves", "Historique des modifications", "Pièces justificatives"],
+        },
+      },
+      {
+        text: "Versioning & préparation audit sans stress de dernière minute",
+        preview: {
+          title: "Versioning & audit",
+          description: "Gérez les versions de votre reporting et préparez sereinement les audits.",
+          items: ["Historique des versions", "Comparaison N/N-1", "Export audit-ready"],
+        },
+      },
+      {
+        text: "Consolidation multi-entités pour une vision groupe cohérente",
+        preview: {
+          title: "Consolidation groupe",
+          description: "Agrégez automatiquement les données de toutes vos entités.",
+          items: ["Consolidation automatique", "Règles de périmètre", "Vue groupe unifiée"],
+        },
+      },
+    ],
     href: "/solutions/csrd-reporting-durable",
     accent: "#beb2ff",
     icon: FileText,
@@ -1078,49 +1712,42 @@ const useCases = [
     short: "Scopes 1/2/3, Scope 3 simplifié, et empreinte carbone produit (PCF).",
     long: "Mesurez vos émissions à partir de données financières et opérationnelles, pilotez vos trajectoires et suivez vos plans d'actions. Intégrez aussi l'empreinte carbone produit pour répondre aux exigences marché.",
     bullets: [
-      "Scopes 1 / 2 / 3 + chaîne de valeur",
-      "Connexion FEC / factures / activité",
-      "Trajectoires & scénarios climat",
-      "Empreinte carbone produit (PCF)",
+      {
+        text: "Scopes 1 / 2 / 3 + chaîne de valeur",
+        preview: {
+          title: "Scopes 1, 2 & 3",
+          description: "Mesurez l'ensemble de vos émissions directes et indirectes.",
+          items: ["Émissions directes (scope 1)", "Énergie (scope 2)", "Chaîne de valeur (scope 3)"],
+        },
+      },
+      {
+        text: "Connexion FEC / factures / activité",
+        preview: {
+          title: "Connexion données sources",
+          description: "Importez vos données depuis vos systèmes existants.",
+          items: ["Import FEC automatisé", "Lecture factures", "Données d'activité"],
+        },
+      },
+      {
+        text: "Trajectoires & scénarios climat",
+        preview: {
+          title: "Trajectoires climat",
+          description: "Définissez vos objectifs de réduction et simulez différents scénarios.",
+          items: ["Objectifs SBTi", "Scénarios de réduction", "Suivi des progrès"],
+        },
+      },
+      {
+        text: "Empreinte carbone produit (PCF)",
+        preview: {
+          title: "Empreinte produit (PCF)",
+          description: "Calculez l'empreinte carbone de vos produits pour répondre aux exigences marché.",
+          items: ["Cycle de vie produit", "Données fournisseurs", "Étiquetage carbone"],
+        },
+      },
     ],
-    chips: ["Scopes 1/2/3", "FEC & factures", "Trajectoires", "PCF"],
     href: "/solutions/climat-empreinte-carbone",
     accent: "#83F0C8",
     icon: TrendingDown,
-  },
-  {
-    title: "Pilotage ESG & Performance",
-    kicker: "Pilotage & gouvernance",
-    headline: "Transformez l'ESG en levier de pilotage et de performance",
-    short: "Enjeux, KPIs, plans d'actions, gouvernance et visibilité COMEX.",
-    long: "Priorisez vos enjeux, définissez vos objectifs, suivez vos indicateurs et pilotez les plans d'actions — avec une gouvernance claire et des tableaux de bord direction.",
-    bullets: [
-      "Matérialité & priorisation des enjeux",
-      "KPIs ESG & climat",
-      "Plans d'actions (ownership & échéances)",
-      "Tableaux de bord direction",
-    ],
-    chips: ["Matérialité", "KPIs", "Plans d'actions", "Dashboard COMEX"],
-    href: "/solutions/pilotage-esg-performance",
-    accent: "#3F2F8D",
-    icon: Target,
-  },
-  {
-    title: "Groupes & multi-entités",
-    kicker: "Multi-entités",
-    headline: "Harmonisez et consolidez l'ESG à l'échelle du groupe",
-    short: "Référentiel commun, consolidation automatique, gouvernance locale.",
-    long: "Standardisez vos données ESG & climat sur l'ensemble de vos entités, consolidez automatiquement et pilotez une vision comparable et fiable — en local comme au niveau groupe.",
-    bullets: [
-      "Référentiel commun groupe",
-      "Collecte locale → consolidation automatique",
-      "Rôles & droits avancés",
-      "Vision par entité / BU / périmètre",
-    ],
-    chips: ["Périmètres", "Consolidation", "Rôles & droits", "Multi-BU"],
-    href: "/solutions/groupes-organisations-multi-entites",
-    accent: "#6F5DE9",
-    icon: Network,
   },
 ];
 

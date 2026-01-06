@@ -1,14 +1,14 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
-import { ArrowRight, Building2, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles, CheckCircle2, Calendar, Clock } from "lucide-react";
+import { caseStudies } from "@/data/caseStudies";
 
 export default function EtudesDeCasPage() {
   return (
     <>
       {/* Hero Section */}
       <section className="relative py-32 bg-gradient-to-br from-[#fcfcfd] via-white to-[#beb2ff]/5 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#beb2ff]/10 border border-[#beb2ff]/20 mb-8">
@@ -30,45 +30,56 @@ export default function EtudesDeCasPage() {
       {/* Case Studies */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl border-2 border-gray-200 p-8 hover:border-[#beb2ff] transition-all hover:shadow-xl group hover-lift"
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {caseStudies.map((study) => (
+              <article
+                key={study.slug}
+                className="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden hover:border-[#beb2ff] transition-all hover:shadow-xl group hover-lift card-elevated"
               >
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-xl bg-[#beb2ff]/20 mr-4 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform">
-                    <Building2 className="text-[#beb2ff]" size={32} />
+                <Link href={`/etudes-de-cas/${study.slug}`}>
+                  <div className="h-52 relative overflow-hidden">
+                    {study.image ? (
+                      <img
+                        src={study.image}
+                        alt={study.title}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#beb2ff]/20 via-[#83F0C8]/20 to-[#3F2F8D]/20" />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#344054]">
-                      {study.company}
-                    </h3>
-                    <p className="text-sm text-gray-600">{study.sector}</p>
-                  </div>
-                </div>
-                <h2 className="text-2xl font-bold text-[#344054] mb-4 group-hover:text-[#3F2F8D] transition-colors">
-                  {study.title}
-                </h2>
-                <p className="text-gray-600 mb-6 leading-relaxed">{study.description}</p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {study.solutions.map((solution, i) => (
-                    <span
-                      key={i}
-                      className="bg-[#beb2ff]/10 text-[#3F2F8D] px-3 py-1 rounded-full text-xs font-medium border border-[#beb2ff]/20"
-                    >
-                      {solution}
-                    </span>
-                  ))}
-                </div>
-                <Link
-                  href={`/etudes-de-cas/${study.slug}`}
-                  className="text-[#3F2F8D] font-medium inline-flex items-center hover:text-[#4c30d6] group-hover:gap-2 transition-all"
-                >
-                  Lire l'étude de cas
-                  <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
                 </Link>
-              </div>
+
+                <div className="p-6">
+                  <div className="flex items-center text-sm text-gray-500 mb-3 gap-4 flex-wrap">
+                    <div className="flex items-center gap-2 px-2 py-1 bg-gray-50 rounded-lg">
+                      <Calendar className="w-4 h-4 text-[#3F2F8D]" />
+                      <span className="font-medium">{study.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-2 py-1 bg-gray-50 rounded-lg">
+                      <Clock className="w-4 h-4 text-[#83F0C8]" />
+                      <span className="font-medium">{study.readTime}</span>
+                    </div>
+                  </div>
+
+                  <Link href={`/etudes-de-cas/${study.slug}`}>
+                    <h2 className="text-xl font-bold text-[#344054] mb-3 group-hover:text-[#3F2F8D] transition-colors line-clamp-2">
+                      {study.title}
+                    </h2>
+                  </Link>
+
+                  <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">{study.excerpt}</p>
+
+                  <Link
+                    href={`/etudes-de-cas/${study.slug}`}
+                    className="text-[#3F2F8D] font-semibold inline-flex items-center hover:text-[#4c30d6] group-hover:gap-2 transition-all"
+                  >
+                    Lire l'étude de cas
+                    <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
+                  </Link>
+                </div>
+              </article>
             ))}
           </div>
         </div>
@@ -105,42 +116,3 @@ export default function EtudesDeCasPage() {
     </>
   );
 }
-
-const caseStudies = [
-  {
-    company: "Groupe Kardol",
-    sector: "Industrie",
-    title: "Intégration de la dimension environnementale dans l'analyse stratégique",
-    description:
-      "Découvrez comment le Groupe Kardol a intégré la dimension environnementale dans son analyse stratégique avec Ekyo.",
-    solutions: ["Ekyo Mesure", "Ekyo Trajectoire"],
-    slug: "groupe-kardol",
-  },
-  {
-    company: "Harmonie Mutuelle",
-    sector: "Assurance",
-    title: "Adaptation de la plateforme aux besoins spécifiques",
-    description:
-      "Comment Harmonie Mutuelle a bénéficié d'une plateforme évolutive parfaitement adaptée à ses besoins.",
-    solutions: ["Ekyo CSRD", "Ekyo Mesure"],
-    slug: "harmonie-mutuelle",
-  },
-  {
-    company: "Picoty",
-    sector: "Transport",
-    title: "Pilotage du plan de décarbonation",
-    description:
-      "Picoty utilise Ekyo pour scénariser et piloter son plan de décarbonation avec succès.",
-    solutions: ["Ekyo Trajectoire", "Ekyo Mesure"],
-    slug: "picoty",
-  },
-  {
-    company: "Constellation",
-    sector: "Services",
-    title: "Stratégie environnementale complète",
-    description:
-      "Le Groupe Constellation fait confiance à Ekyo depuis 2022 pour l'élaboration et la gestion de sa stratégie environnementale.",
-    solutions: ["Ekyo Mesure", "Ekyo Trajectoire", "Ekyo CSRD"],
-    slug: "constellation",
-  },
-];

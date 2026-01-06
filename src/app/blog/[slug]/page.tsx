@@ -3,7 +3,7 @@
 import { use, useState, useEffect } from "react";
 import Link from "next/link";
 import { Calendar, Clock, ArrowLeft, ArrowRight, Sparkles, Share2, BookOpen } from "lucide-react";
-import { blogPosts } from "../page";
+import { blogPosts } from "@/data/blogPosts";
 import { blogContent } from "@/data/blogContent";
 
 interface BlogPostPageProps {
@@ -75,7 +75,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#fcfcfd] via-white to-[#beb2ff]/5 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
         <div className="absolute inset-0 bg-radial-gradient"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Link
@@ -118,6 +117,18 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <span className="font-semibold text-gray-700">Article</span>
             </div>
           </div>
+
+          {post.image && (
+            <div className="mt-2 mb-10">
+              <div className="rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -152,7 +163,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-[#3F2F8D] via-[#6F5DE9] to-[#3F2F8D] relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
+        <div className="absolute inset-0 bg-pattern-dots"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Engager une stratégie ESG
@@ -194,7 +205,16 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   className="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden hover:border-[#beb2ff] transition-all hover:shadow-xl group hover-lift card-elevated animate-fade-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="h-48 bg-gradient-to-br from-[#beb2ff]/20 via-[#83F0C8]/20 to-[#3F2F8D]/20 group-hover:scale-105 transition-transform relative overflow-hidden">
+                  <div className="h-48 group-hover:scale-105 transition-transform relative overflow-hidden">
+                    {relatedPost.image ? (
+                      <img
+                        src={relatedPost.image}
+                        alt={relatedPost.title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#beb2ff]/20 via-[#83F0C8]/20 to-[#3F2F8D]/20" />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-[#3F2F8D] opacity-0 group-hover:opacity-100 transition-opacity">
                       Lire

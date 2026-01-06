@@ -16,7 +16,6 @@ export default function PilotageESGPerformancePage() {
   return (
     <>
       <section className="relative py-40 bg-gradient-to-br from-[#fcfcfd] via-white to-[#3F2F8D]/5 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#3F2F8D]/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -45,7 +44,7 @@ export default function PilotageESGPerformancePage() {
 
       {/* Visualisation principale */}
       <section className="py-40 bg-gradient-to-br from-[#fcfcfd] to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
+        <div className="absolute inset-0 bg-pattern-dots"></div>
         <div className="absolute inset-0 bg-radial-gradient"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -92,7 +91,6 @@ export default function PilotageESGPerformancePage() {
 
       {/* Section Étapes Interactif */}
       <section className="py-40 section-background bg-gradient-to-br from-[#fcfcfd] via-white to-[#f8f9fa] relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-30"></div>
         <div className="absolute inset-0 bg-radial-gradient"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3F2F8D]/30 to-transparent"></div>
         <div ref={stepsRef.ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -169,7 +167,6 @@ export default function PilotageESGPerformancePage() {
 
       {/* Section Bénéfices avec visualisations pleine largeur */}
       <section ref={benefitsRef.ref} className={`py-32 section-background bg-gradient-to-br from-white via-[#fcfcfd] to-[#f8f9fa] relative overflow-hidden transition-all duration-700 ${benefitsRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
         <div className="absolute inset-0 bg-radial-gradient"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
@@ -219,7 +216,6 @@ export default function PilotageESGPerformancePage() {
 
       {/* Section 1: Cartographie des enjeux */}
       <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#344054] mb-4">Ce que permet Ekyo</h2>
@@ -471,7 +467,6 @@ export default function PilotageESGPerformancePage() {
       </section>
 
       <section className="py-32 section-background bg-gradient-to-br from-[#3F2F8D]/10 via-white to-[#83F0C8]/10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-[#3F2F8D]/5 via-transparent to-[#83F0C8]/5"></div>
         <div className="relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

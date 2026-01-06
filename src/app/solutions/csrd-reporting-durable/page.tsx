@@ -15,27 +15,27 @@ export default function CSRDReportingDurablePage() {
 
   return (
     <>
-      <section className="relative py-40 bg-gradient-to-br from-[#fcfcfd] via-white to-[#beb2ff]/5 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#beb2ff]/20 rounded-full blur-3xl animate-pulse"></div>
+      <section className="relative py-40 bg-gradient-to-br from-[#fcfcfd] via-white to-[#beb2ff]/12 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#beb2ff]/25 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#83F0C8]/25 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#beb2ff]/10 border border-[#beb2ff]/20 mb-8 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#beb2ff]/20 border-2 border-[#beb2ff]/40 mb-8 animate-fade-in shadow-sm">
               <Sparkles className="w-4 h-4 text-[#beb2ff]" />
               <span className="text-sm font-medium text-[#beb2ff]">Solution</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-[#344054] mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-5xl md:text-6xl font-bold text-[#344054] mb-6 leading-tight animate-fade-in drop-shadow-sm" style={{ animationDelay: "0.1s" }}>
               Préparez et sécurisez votre reporting extra-financier à l'échelle du groupe
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
               Ekyo vous aide à structurer, fiabiliser et industrialiser votre reporting de durabilité (CSRD, ESRS, Taxonomie), en consolidant l'ensemble des données ESG et climat de vos entités — avec traçabilité et auditabilité complètes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <Link href="/contact?intent=expert" className="group bg-[#3F2F8D] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#4c30d6] transition-all inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              <Link href="/contact?intent=expert" className="group bg-[#3F2F8D] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#4c30d6] transition-all inline-flex items-center justify-center shadow-violet shadow-violet-hover transform hover:-translate-y-1 hover:scale-105">
                 Échanger avec un expert CSRD
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Link>
-              <Link href="/contact?intent=demo" className="bg-white text-[#3F2F8D] border-2 border-[#3F2F8D] px-8 py-4 rounded-lg font-medium hover:bg-[#3F2F8D]/5 transition-all inline-flex items-center justify-center">
+              <Link href="/contact?intent=demo" className="bg-white text-[#3F2F8D] border-2 border-[#3F2F8D] px-8 py-4 rounded-lg font-medium hover:bg-[#3F2F8D]/10 transition-all inline-flex items-center justify-center shadow-md hover:shadow-lg hover:shadow-violet transform hover:-translate-y-0.5">
                 Demander une démonstration
               </Link>
             </div>
@@ -45,7 +45,7 @@ export default function CSRDReportingDurablePage() {
 
       {/* Visualisation principale */}
       <section className="py-40 bg-gradient-to-br from-[#fcfcfd] to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
+        <div className="absolute inset-0 bg-pattern-dots"></div>
         <div className="absolute inset-0 bg-radial-gradient"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -72,7 +72,7 @@ export default function CSRDReportingDurablePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-[1.02] transition-transform">
+              <div className="bg-white rounded-2xl shadow-2xl shadow-violet border-2 border-[#beb2ff]/30 overflow-hidden transform hover:scale-[1.02] hover:border-[#beb2ff]/60 transition-all">
                 <div className="bg-gradient-to-r from-[#beb2ff] to-[#83F0C8] p-4 flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
@@ -92,7 +92,6 @@ export default function CSRDReportingDurablePage() {
 
       {/* Section Processus Interactif */}
       <section className="py-40 section-background bg-gradient-to-br from-[#fcfcfd] via-white to-[#f8f9fa] relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-30"></div>
         <div className="absolute inset-0 bg-radial-gradient"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#beb2ff]/30 to-transparent"></div>
         <div ref={processRef.ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -109,8 +108,8 @@ export default function CSRDReportingDurablePage() {
                 onClick={() => setActiveProcess(idx)}
                 className={`px-8 py-4 rounded-xl font-medium transition-all relative group ${
                   activeProcess === idx
-                    ? 'bg-[#3F2F8D] text-white shadow-lg scale-105'
-                    : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-[#beb2ff]'
+                    ? 'bg-[#3F2F8D] text-white shadow-violet scale-105'
+                    : 'bg-white text-gray-700 border-2 border-[#beb2ff]/30 hover:border-[#beb2ff]/60'
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -140,7 +139,7 @@ export default function CSRDReportingDurablePage() {
             </div>
 
             <div className={`relative transition-all duration-500 ${processRef.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-[1.02] transition-transform">
+              <div className="bg-white rounded-2xl shadow-2xl shadow-violet border-2 border-[#beb2ff]/30 overflow-hidden transform hover:scale-[1.02] hover:border-[#beb2ff]/60 transition-all">
                 <div className="bg-gradient-to-r from-[#3F2F8D] to-[#6F5DE9] p-4 flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
@@ -169,7 +168,6 @@ export default function CSRDReportingDurablePage() {
 
       {/* Section Bénéfices avec visualisations pleine largeur */}
       <section ref={benefitsRef.ref} className={`py-32 section-background bg-gradient-to-br from-white via-[#fcfcfd] to-[#f8f9fa] relative overflow-hidden transition-all duration-700 ${benefitsRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
         <div className="absolute inset-0 bg-radial-gradient"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
@@ -197,7 +195,7 @@ export default function CSRDReportingDurablePage() {
                   </ul>
                 </div>
                 <div className={index % 2 === 0 ? '' : 'lg:order-1'}>
-                  <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-[1.02] transition-transform">
+                  <div className="bg-white rounded-2xl shadow-2xl shadow-violet border-2 border-[#beb2ff]/30 overflow-hidden transform hover:scale-[1.02] hover:border-[#beb2ff]/60 transition-all">
                     <div className="bg-gradient-to-r from-[#beb2ff] to-[#83F0C8] p-4 flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-white/30"></div>
                       <div className="w-3 h-3 rounded-full bg-white/30"></div>
@@ -219,7 +217,7 @@ export default function CSRDReportingDurablePage() {
 
       {/* Section 1: Cadre structurant pour la double matérialité */}
       <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
+        <div className="absolute inset-0 bg-pattern-dots"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -249,7 +247,7 @@ export default function CSRDReportingDurablePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-[1.02] transition-transform">
+              <div className="bg-white rounded-2xl shadow-2xl shadow-violet border-2 border-[#beb2ff]/30 overflow-hidden transform hover:scale-[1.02] hover:border-[#beb2ff]/60 transition-all">
                 <div className="bg-gradient-to-r from-[#beb2ff] to-[#83F0C8] p-4 flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
@@ -273,11 +271,10 @@ export default function CSRDReportingDurablePage() {
 
       {/* Section 2: Collecte et consolidation multi-périmètres */}
       <section className="py-32 bg-gradient-to-br from-[#fcfcfd] to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-[1.02] transition-transform">
+              <div className="bg-white rounded-2xl shadow-2xl shadow-violet border-2 border-[#beb2ff]/30 overflow-hidden transform hover:scale-[1.02] hover:border-[#beb2ff]/60 transition-all">
                 <div className="bg-gradient-to-r from-[#beb2ff] to-[#83F0C8] p-4 flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
@@ -327,7 +324,7 @@ export default function CSRDReportingDurablePage() {
 
       {/* Section 3: Traçabilité des données et preuves */}
       <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
+        <div className="absolute inset-0 bg-pattern-dots"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -357,7 +354,7 @@ export default function CSRDReportingDurablePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-[1.02] transition-transform">
+              <div className="bg-white rounded-2xl shadow-2xl shadow-violet border-2 border-[#beb2ff]/30 overflow-hidden transform hover:scale-[1.02] hover:border-[#beb2ff]/60 transition-all">
                 <div className="bg-gradient-to-r from-[#beb2ff] to-[#83F0C8] p-4 flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
@@ -381,11 +378,10 @@ export default function CSRDReportingDurablePage() {
 
       {/* Section 4: Suivi des exigences et points de données ESRS */}
       <section className="py-32 bg-gradient-to-br from-[#fcfcfd] to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-[1.02] transition-transform">
+              <div className="bg-white rounded-2xl shadow-2xl shadow-violet border-2 border-[#beb2ff]/30 overflow-hidden transform hover:scale-[1.02] hover:border-[#beb2ff]/60 transition-all">
                 <div className="bg-gradient-to-r from-[#beb2ff] to-[#83F0C8] p-4 flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
@@ -435,7 +431,7 @@ export default function CSRDReportingDurablePage() {
 
       {/* Section 5: Versioning et production du rapport */}
       <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
+        <div className="absolute inset-0 bg-pattern-dots"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -465,7 +461,7 @@ export default function CSRDReportingDurablePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-[1.02] transition-transform">
+              <div className="bg-white rounded-2xl shadow-2xl shadow-violet border-2 border-[#beb2ff]/30 overflow-hidden transform hover:scale-[1.02] hover:border-[#beb2ff]/60 transition-all">
                 <div className="bg-gradient-to-r from-[#beb2ff] to-[#83F0C8] p-4 flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
@@ -488,18 +484,17 @@ export default function CSRDReportingDurablePage() {
       </section>
 
       <section className="py-32 section-background bg-gradient-to-br from-[#beb2ff]/10 via-white to-[#83F0C8]/10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-[#beb2ff]/5 via-transparent to-[#83F0C8]/5"></div>
         <div className="relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-[#344054] mb-6">Prêt à sécuriser votre reporting CSRD ?</h2>
           <p className="text-xl text-gray-600 mb-10">Contactez-nous pour découvrir comment Ekyo peut vous accompagner.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact?intent=expert" className="bg-[#3F2F8D] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#4c30d6] transition-all inline-flex items-center justify-center shadow-lg hover:shadow-xl">
+            <Link href="/contact?intent=expert" className="bg-[#3F2F8D] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#4c30d6] transition-all inline-flex items-center justify-center shadow-violet shadow-violet-hover transform hover:-translate-y-1 hover:scale-105">
               Télécharger le guide CSRD
               <ArrowRight className="ml-2" size={20} />
             </Link>
-            <Link href="/contact?intent=demo" className="bg-white text-[#3F2F8D] border-2 border-[#3F2F8D] px-8 py-4 rounded-lg font-medium hover:bg-[#3F2F8D]/5 transition-all inline-flex items-center justify-center">
+            <Link href="/contact?intent=demo" className="bg-white text-[#3F2F8D] border-2 border-[#3F2F8D] px-8 py-4 rounded-lg font-medium hover:bg-[#3F2F8D]/10 transition-all inline-flex items-center justify-center shadow-md hover:shadow-lg hover:shadow-violet transform hover:-translate-y-0.5">
               Voir un exemple de rapport
             </Link>
           </div>
@@ -526,7 +521,7 @@ const processSteps = [
     visual: (
       <div className="grid grid-cols-2 gap-3">
         {["Périmètre", "Enjeux", "Entités", "Collecte"].map((item, i) => (
-          <div key={i} className="bg-white rounded-lg p-3 text-center border border-gray-200 hover:border-[#beb2ff] transition-all">
+          <div key={i} className="bg-white rounded-lg p-3 text-center border-2 border-[#beb2ff]/30 hover:border-[#beb2ff]/60 transition-all shadow-sm hover:shadow-md">
             <div className="w-8 h-8 bg-[#beb2ff]/20 rounded mx-auto mb-2 flex items-center justify-center">
               <Layers className="w-4 h-4 text-[#beb2ff]" />
             </div>
@@ -551,7 +546,7 @@ const processSteps = [
     visual: (
       <div className="space-y-3">
         {["Entité A", "Entité B", "Entité C"].map((ent, i) => (
-          <div key={i} className="bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between hover:border-[#83F0C8] transition-all">
+          <div key={i} className="bg-white rounded-lg p-3 border-2 border-[#83F0C8]/30 flex items-center justify-between hover:border-[#83F0C8]/60 transition-all shadow-sm hover:shadow-md">
             <span className="text-sm font-medium text-gray-700">{ent}</span>
             <CheckCircle2 className="w-5 h-5 text-[#83F0C8]" />
           </div>
